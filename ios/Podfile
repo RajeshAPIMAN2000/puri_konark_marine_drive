@@ -30,5 +30,9 @@ target 'puri_konarka_marine_drive' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+    # MapLibre React Native iOS post-install hook
+    if defined?($MLRN) && $MLRN.respond_to?(:post_install)
+      $MLRN.post_install(installer)
+    end
   end
 end

@@ -18,4 +18,29 @@ buildscript {
     }
 }
 
+allprojects {
+    repositories {
+        maven {
+            // Free BGeo closed engine AAR (local Maven inside the npm package)
+            url("$rootDir/../node_modules/@dc-bgeo/react-native-background-geolocation/android/libs")
+        }
+    }
+}
+
+// Force library modules (e.g. react-native-print) onto app compileSdk for release metadata checks.
+subprojects { subproject ->
+    subproject.afterEvaluate {
+        if (subproject.hasProperty("android")) {
+            subproject.android {
+                if (compileSdkVersion == null || (compileSdkVersion instanceof Integer && compileSdkVersion < rootProject.ext.compileSdkVersion)) {
+                    compileSdkVersion rootProject.ext.compileSdkVersion
+                }
+                if (namespace == null && project.name == "react-native-print") {
+                    namespace = "com.christopherdro.reactnativeprint"
+                }
+            }
+        }
+    }
+}
+
 apply plugin: "com.facebook.react.rootproject"

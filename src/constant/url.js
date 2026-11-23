@@ -1,0 +1,1 @@
+export const BASE_URL=`https://gcenvironment.com/ManpowerCRM/api/v1/`;

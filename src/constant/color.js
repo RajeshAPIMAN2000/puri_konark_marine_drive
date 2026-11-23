@@ -1,0 +1,15 @@
+export const WHITE = "#FFFFFF";
+export const BLACK = "#000000";
+export const GREY = "#8A94A6";
+export const LIGHTGREY = "#F3F5F8";
+export const BRANDCOLOR = "#0B1F3A";
+export const NAVY = "#0B1F3A";
+export const BLUE = "#2F6FED";
+export const LIGHTBLUE = "#E8F4FC";
+export const GREEN = "#16A34A";
+export const RED = "#E11D48";
+export const ORANGE = "#EA5F0B";
+export const BUTTON = "#EA5F0B";
+export const PURPLE = "#7C3AED";
+export const TEAL = "#14B8A6";
+export const PINK = "#EC4899";
